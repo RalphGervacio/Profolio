@@ -227,25 +227,75 @@ $(document).ready(function () {
 
   //===== SWAL ALERT FOR CV =====//
   $('#downloadCV').on('click', function () {
-    Swal.fire({
-      title: 'Are You Sure?',
-      text: "Do you want to download the CV now?",
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonText: 'Proceed',
-      cancelButtonText: 'Cancel',
-      customClass: {
-        confirmButton: 'btn btn-dark mx-2',
-        cancelButton: 'btn btn-light'
-      },
-      buttonsStyling: false,
-      showClass: {
-        popup: 'animate__animated animate__flipInX'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__zoomOut'
-      }
-    });
+  Swal.fire({
+    title: 'Are You Sure?',
+    text: "Do you want to download the CV now?",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Proceed',
+    cancelButtonText: 'Cancel',
+    allowOutsideClick: false,
+    customClass: {
+      confirmButton: 'btn btn-dark mx-2',
+      cancelButton: 'btn btn-light'
+    },
+    buttonsStyling: false,
+    showClass: {
+      popup: 'animate__animated animate__flipInX'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__zoomOut'
+    }
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const cvUrl = 'assets/resume/Gervacio-Ralph-Daria.pdf';
+
+      // Show custom preloader
+      Swal.fire({
+        title: 'Downloading...',
+        html: `
+          <div class="spinner-container" style="display: flex; justify-content: center; align-items: center; height: 80px;">
+            <div class="custom-spinner" style="width: 40px; height: 40px; border: 4px solid #999; border-top-color: #000; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+          </div>
+          <p style="margin-top: 10px;">Please wait while the CV is being downloaded.</p>
+        `,
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        didOpen: () => {
+          // You can add more JS if needed
+        }
+      });
+
+      // Trigger download
+      const a = document.createElement('a');
+      a.href = cvUrl;
+      a.download = 'Gervacio-Ralph-Daria.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      // After delay, show Thank You message
+      setTimeout(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Thank You!',
+          text: 'Thank you for downloading my CV.',
+          confirmButtonText: 'Close',
+          customClass: {
+            confirmButton: 'btn btn-dark'
+          },
+          buttonsStyling: false,
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        });
+      }, 1500);
+    }
   });
+});
+
 
 });
