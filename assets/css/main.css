@@ -478,6 +478,11 @@ h6 {
     blink 0.75s step-end infinite;
 }
 
+.typing-container.done {
+  border-right: none;
+  animation: typing 2.5s steps(7, end) forwards;
+}
+
 /* Typing effect */
 @keyframes typing {
   from {

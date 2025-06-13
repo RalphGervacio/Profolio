@@ -23,6 +23,12 @@ $(document).ready(function () {
   const preloader = $('#preloader');
   if (preloader.length) {
     $(window).on('load', function () {
+      $('.typing-container').on('animationend', function (e) {
+        if (e.originalEvent.animationName === 'typing') {
+          $(this).addClass('done');
+        }
+      });
+
       setTimeout(function () {
         preloader.addClass('fade-out');
         setTimeout(() => preloader.remove(), 1000);
