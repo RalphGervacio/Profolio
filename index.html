@@ -50,13 +50,65 @@
       <div class="header-social-links">
         <a href="https://x.com/KiryuiAkumaCNFT" class="twitter"><i class="bi bi-twitter-x"></i></a>
         <a href="https://www.facebook.com/ralphthegreat2002/" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/ralphtheimmortal/?hl=en" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.instagram.com/ralphtheimmortal/?hl=en" class="instagram"><i
+            class="bi bi-instagram"></i></a>
+
+        <!-- Background Music -->
+        <audio id="bg-music" loop preload="none">
+          <source src="assets/music/bg-music.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <button id="toggle-music" class="music-btn" title="Turn On Background Music">
+          <i class="bi bi-music-note-beamed"></i>
+        </button>
       </div>
 
     </div>
   </header>
 
   <main class="main">
+
+    <!-- Music Info Modal -->
+    <div class="modal fade" id="musicInfoModal" tabindex="-1" aria-labelledby="musicInfoModalLabel" aria-hidden="true"
+      data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-lg modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-secondary">
+
+          <!-- Modal Header -->
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="musicInfoModalLabel">
+              <i class="bi bi-info-circle"></i> Heads up!
+            </h5>
+            <button type="button" class="btn text-white p-0 border-0 bg-transparent ms-auto" data-bs-dismiss="modal"
+              aria-label="Close" style="font-size: 1.5rem;">
+              <i class="bi bi-x"></i>
+            </button>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="modal-body text-center">
+            <p class="mb-2">🎵 This portfolio has background music. Would you like to turn it on?</p>
+            <p class="small">
+              You can also turn it on or off anytime using the music button located at the top right corner of the
+              header.
+            </p>
+            <img src="assets/music/information.png" alt="Info Graphic" class="img-fluid mb-3"
+              style="max-height: 200px;">
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer border-secondary d-flex justify-content-between">
+            <button type="button" class="btn btn-outline-light" id="music-yes-btn" data-bs-dismiss="modal">
+              Yes, turn it on <i class="bi bi-volume-up ms-1"></i>
+            </button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+              No thanks
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
     <!-- Home Section -->
     <section id="home" class="home section dark-background">
@@ -313,8 +365,9 @@
                 <div class="portfolio-info">
                   <h4>Web Development</h4>
                   <p>Work in Progress</p>
-                  <a href="assets/img/portfolio/Work in Progress.jpg" title="Work in Progress" data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Work in Progress.jpg" title="Work in Progress"
+                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -352,8 +405,9 @@
                 <div class="portfolio-info">
                   <h4>Web Developement</h4>
                   <p>Work in Progress</p>
-                  <a href="assets/img/portfolio/Work in Progress.jpg" title="Work in Progress" data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Work in Progress.jpg" title="Work in Progress"
+                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -390,8 +444,9 @@
                 <div class="portfolio-info">
                   <h4>Web Developement</h4>
                   <p>Work in Progress</p>
-                  <a href="assets/img/portfolio/Work in Progress.jpg" title="Work in Progress" data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Work in Progress.jpg" title="Work in Progress"
+                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -583,7 +638,8 @@
           <strong>R.A. 10173</strong> (Data Privacy Act of 2012), Philippines.
         </p>
         <p>
-          Logos are property of their respective trademark holders and are used here under <strong>**fair use**</strong> for
+          Logos are property of their respective trademark holders and are used here under <strong>**fair use**</strong>
+          for
           identification and descriptive purposes. No copyright infringement is intended.
         </p>
       </div>

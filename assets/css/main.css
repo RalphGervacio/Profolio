@@ -144,6 +144,21 @@ h6 {
   line-height: 0;
 }
 
+/* Music button */
+.music-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.music-btn:hover {
+  color: #ffc107; 
+}
+
 @media (max-width: 1200px) {
   .header .logo {
     order: 1;

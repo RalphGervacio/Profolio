@@ -1,7 +1,27 @@
 $(document).ready(function () {
   'use strict';
 
+  $('#musicInfoModal').modal('show');
+  const preloader = $('#preloader');
+  const scrollTop = $('.scroll-top');
   const headerToggleBtn = $('.header-toggle');
+  const music = $('#bg-music')[0];
+  music.volume = 0.02;
+  let isPlaying = false;
+
+  //===== Toggle Background Music =====//
+  $('#toggle-music').on('click', function () {
+    if (isPlaying) {
+      music.pause();
+      $(this).html('<i class="bi bi-music-note-beamed"></i>');
+      $(this).attr('title', 'Turn On Background Music');
+    } else {
+      music.play();
+      $(this).html('<i class="bi bi-pause-circle-fill"></i>');
+      $(this).attr('title', 'Turn Off Background Music');
+    }
+    isPlaying = !isPlaying;
+  });
 
   //===== Toggle the header visibility on small screens =====//
   function headerToggle() {
@@ -19,8 +39,7 @@ $(document).ready(function () {
     }
   });
 
-  //===== Preloader fade-out and removal after page load =====//
-  const preloader = $('#preloader');
+  //===== Preloader =====//
   if (preloader.length) {
     $(window).on('load', function () {
       $('.typing-container').on('animationend', function (e) {
@@ -31,12 +50,24 @@ $(document).ready(function () {
 
       setTimeout(function () {
         preloader.addClass('fade-out');
-        setTimeout(() => preloader.remove(), 1000);
+
+        setTimeout(function () {
+          preloader.remove();
+
+          // Show modal only once
+          if (!sessionStorage.getItem('musicModalShown')) {
+            sessionStorage.setItem('musicModalShown', 'true');
+          }
+
+          // Trigger music toggle if user clicks Yes
+          $('#music-yes-btn').on('click', function () {
+            $('#toggle-music').trigger('click');
+          });
+
+        }, 1000);
       }, 2500);
     });
   }
-
-  const scrollTop = $('.scroll-top');
 
   //===== Show/hide scroll-to-top button =====//
   function toggleScrollTop() {
