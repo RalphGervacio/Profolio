@@ -85,8 +85,7 @@ $(document).ready(function () {
       });
     } else {
       $('body').removeClass('mobile-nav-active');
-      $('.mobile-nav-toggle').removeClass('bi-x-circle ').addClass('bi-folder2-open');
-
+      $('.mobile-nav-toggle').removeClass('bi-x-circle text-danger').addClass('bi-folder2-open');
       $('#navmenu a').removeClass('aos-animate');
     }
   }

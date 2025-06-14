@@ -5,45 +5,60 @@
   --nav-font: "Poppins", sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors */
 :root {
-  --background-color: #c7c6c6;
-  /* Background color for the entire website, including individual sections */
-  --default-color: #272829;
-  /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18;
-  /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #434242;
-  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff;
-  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff;
-  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #1b1a1a;
+  /* Solid black background */
+  --default-color: #E0E0E0;
+  /* Light gray text for readability */
+  --heading-color: #FFFFFF;
+  /* Pure white for headings */
+  --accent-color: #ff0000;
+  /* Dark gray for buttons, links */
+  --surface-color: #1A1A1A;
+  /* Dark gray boxes/cards background */
+  --contrast-color: #FFFFFF;
+  /* Text contrast */
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Nav Menu Colors */
 :root {
-  --nav-color: #a8a9b4;
-  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff;
-  /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #040b14;
-  /* Used as the background color for mobile navigation menu */
+  --nav-color: #BBBBBB;
+  /* Light gray nav links */
+  --nav-hover-color: #FFFFFF;
+  /* White on hover */
+  --nav-mobile-background-color: #000000;
+  /* Pure black background for mobile menu */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* Skill Section */
+:root {
+  --card-background: #2a2a2a;
+  /* Light mode card */
+  --card-text-color: #bebaba;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --card-background: #1f1f1f;
+  --card-text-color: #ffffff;
+  --card-shadow: rgba(255, 255, 255, 0.06);
+}
+
+/* Color Presets */
 
 .light-background {
-  --background-color: #9E9E9E;
-  --surface-color: #ffffff;
+  --background-color: #121212;
+  --surface-color: #1A1A1A;
 }
 
 .dark-background {
-  --background-color: linear-gradient(to bottom, #000000, #202020);
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #151f2b;
-  --contrast-color: #ffffff;
+  --background-color: linear-gradient(to bottom, #000000, #1A1A1A);
+  /* Gradient of black */
+  --default-color: #E0E0E0;
+  --heading-color: #FFFFFF;
+  --surface-color: #1A1A1A;
+  --contrast-color: #FFFFFF;
 }
 
 /* Smooth scroll */
@@ -82,15 +97,14 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Global Header
+# Global Header - DARK THEME
 --------------------------------------------------------------*/
 .header {
-  color: #000000;
-  background-color: #9E9E9E;
   padding: 8px 0;
   transition: all 0.5s;
   z-index: 997;
-  box-shadow: 0px 0 12px rgba(0, 0, 0, 0.08);
+  background-color: var(--background-color);
+  box-shadow: 0px 0 12px rgba(255, 255, 255, 0.05);
 }
 
 .header .logo {
@@ -107,7 +121,7 @@ h6 {
   margin: 0;
   font-weight: 300;
   text-transform: uppercase;
-  color: #000000;
+  color: #ffffff;
 }
 
 .header .header-social-links {
@@ -115,7 +129,7 @@ h6 {
 }
 
 .header .header-social-links a {
-  color: #666666;
+  color: #ff0000;
   padding-left: 4px;
   display: inline-block;
   transition: 0.3s;
@@ -123,7 +137,7 @@ h6 {
 }
 
 .header .header-social-links a:hover {
-  color: #000000;
+  color: #ffffff;
 }
 
 .header .header-social-links a i {
@@ -145,8 +159,9 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
+# Navigation Menu - DARK THEME
 --------------------------------------------------------------*/
+
 /* Desktop Navigation */
 @media (min-width: 1200px) {
   .navmenu {
@@ -176,7 +191,6 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: #000000;
     font-size: 15px;
     padding: 0 2px;
     font-weight: 400;
@@ -186,6 +200,7 @@ h6 {
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
+    color: #f1f1f1;
     text-decoration: none;
   }
 
@@ -195,7 +210,7 @@ h6 {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: #000000;
+    background-color: #ff0000;
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -211,14 +226,14 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: #000000;
+    color: #ffffff;
   }
 }
 
 /* Mobile Nav */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: #000000;
+    color: #ffffff;
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -241,7 +256,7 @@ h6 {
     border-radius: 6px;
     background-color: #121212;
     border: 1px solid #292929;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.05);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -280,7 +295,7 @@ h6 {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    background: rgba(255, 255, 255, 0.07);
     transition: left 0.5s ease;
   }
 
@@ -295,7 +310,7 @@ h6 {
     left: 0;
     width: 0;
     height: 100%;
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.05);
     transition: width 0.3s ease;
     z-index: -1;
   }
@@ -308,10 +323,10 @@ h6 {
   .navmenu .active,
   .navmenu .active:focus {
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
     transform: translateX(10px) scale(1.03);
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
   }
 
   .navmenu a:hover i {
@@ -337,24 +352,8 @@ h6 {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    background: linear-gradient(45deg, #000000, #121212, #2C2C2C, #4B4B4B, #6E6E6E, #909090, #B3B3B3, #DCDCDC, #F0F0F0, #FFFFFF);
-    background-size: 400% 400%;
-    animation: gradientShift 8s ease infinite;
+    background: #000000;
     transition: 0.3s;
-  }
-
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
   }
 
   .mobile-nav-active .navmenu>ul {
@@ -383,11 +382,6 @@ h6 {
     50% {
       transform: translateY(-3px);
     }
-  }
-
-  .navmenu a:hover {
-    transform: translateX(10px) scale(1.05);
-    text-shadow: 0 0 5px #ffffff;
   }
 
   .mobile-nav-active .navmenu a:nth-child(1) {
@@ -444,13 +438,13 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Preloader
+# Preloader - Dark Theme
 --------------------------------------------------------------*/
 #preloader {
   position: fixed;
   inset: 0;
   z-index: 999999;
-  background: #fefae0;
+  background: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -465,13 +459,14 @@ h6 {
   pointer-events: none;
 }
 
+/* Typing Container */
 .typing-container {
   font-size: 24px;
   font-weight: bold;
-  color: #5a3e1b;
+  color: #fff;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #5a3e1b;
+  border-right: 2px solid #fff;
   width: 0;
   animation:
     typing 2.5s steps(7, end) forwards,
@@ -741,39 +736,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Stats Section
---------------------------------------------------------------*/
-.stats .stats-item {
-  padding: 30px;
-  width: 100%;
-}
-
-.stats .stats-item i {
-  color: var(--accent-color);
-  display: block;
-  font-size: 44px;
-  float: left;
-  line-height: 0;
-}
-
-.stats .stats-item .purecounter {
-  color: var(--heading-color);
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
-  font-weight: 700;
-  margin-left: 60px;
-}
-
-.stats .stats-item p {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: var(--heading-font);
-  font-size: 14px;
-}
-
-/*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
 
@@ -801,14 +763,14 @@ section,
 }
 
 .skills .skill-card {
-  background: #bebebe;
+  background: var(--card-background);
   border-radius: 15px;
   padding: 30px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
   transition: color 0.4s ease, transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px var(--card-shadow);
   width: 100%;
   height: 100%;
   max-width: 100%;
@@ -817,6 +779,7 @@ section,
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--card-text-color);
 }
 
 .skills .skill-card:hover {
@@ -867,6 +830,7 @@ section,
   font-weight: 600;
   margin-bottom: 5px;
   color: inherit;
+  color: var(--card-text-color);
 }
 
 .skills .skill-card p {
@@ -874,6 +838,7 @@ section,
   margin: 0;
   font-weight: 500;
   color: inherit;
+  color: var(--card-text-color);
 }
 
 .icon-lg {
@@ -1154,132 +1119,41 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
-}
-
-.testimonials .testimonial-item {
-  box-sizing: content-box;
-  text-align: center;
-  min-height: 320px;
-}
-
-.testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-}
-
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin: 0;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--accent-color), transparent 40%);
-  font-size: 26px;
-  line-height: 0;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-  transform: scale(-1, -1);
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 15px 15px 15px;
-  padding: 20px;
-  background-color: var(--surface-color);
-  position: relative;
-  margin-bottom: 35px;
-  border-radius: 6px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-.testimonials .testimonial-item p::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 20px solid var(--surface-color);
-  border-right: 20px solid transparent;
-  border-left: 20px solid transparent;
-  position: absolute;
-  bottom: -20px;
-  left: calc(50% - 20px);
-}
-
-.testimonials .swiper-wrapper {
-  height: auto;
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 40px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: var(--background-color);
-  opacity: 1;
-  border: 1px solid var(--accent-color);
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Contact Section - Custom Design (No Bootstrap Color Classes)
+# Contact Section
 --------------------------------------------------------------*/
 
 .contact {
   padding: 60px 0;
 }
 
-.contact .info-wrap {
-  background-color: #f8f9fa;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-  border-radius: 1rem;
-  padding: 2.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+/* Card Wrapper */
+.contact .card {
+  background-color: var(--background-color);
+  color: var(--default-color);
+  border: none;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 575.98px) {
-  .contact .info-wrap {
-    flex-direction: column;
-    padding: 1.25rem;
-  }
+/* Contact Info Side */
+.contact-info-dark {
+  background-color: var(--surface-color);
+  color: var(--default-color);
 }
 
-/* Contact Info Icon Styles */
+.contact-info-dark h4,
+.contact-info-dark h6 {
+  color: var(--heading-color);
+}
+
+.contact-info-dark p {
+  color: var(--default-color);
+}
+
+/* Info Icon Styles */
 .contact .info-item i {
   font-size: 1.375rem;
-  color: #2c3e50;
-  background-color: #e0e0e0;
+  color: var(--default-color);
+  background-color: var(--background-color);
   width: 48px;
   height: 48px;
   min-width: 48px;
@@ -1289,61 +1163,67 @@ section,
   border-radius: 0.75rem;
   transition: all 0.3s ease-in-out;
   transform: scale(1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
 }
 
-/* Hover Effects with Custom Colors */
+/* Hover Effects */
 .contact .info-item.location:hover i {
   background-color: #007bff;
-  /* blue */
   color: #fff;
   transform: scale(1.1);
-  box-shadow: 0 0 0.75rem rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 0.75rem rgba(0, 123, 255, 0.4);
 }
 
 .contact .info-item.phone:hover i {
   background-color: #28a745;
-  /* green */
   color: #fff;
   transform: scale(1.1);
-  box-shadow: 0 0 0.75rem rgba(40, 167, 69, 0.5);
+  box-shadow: 0 0 0.75rem rgba(40, 167, 69, 0.4);
 }
 
 .contact .info-item.email:hover i {
   background-color: #dc3545;
-  /* red */
   color: #fff;
   transform: scale(1.1);
-  box-shadow: 0 0 0.75rem rgba(220, 53, 69, 0.5);
+  box-shadow: 0 0 0.75rem rgba(220, 53, 69, 0.4);
 }
 
-/* Contact Text Styles */
+/* Text Styles */
 .contact .info-item h6 {
   font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
-  color: #333;
+  color: var(--heading-color);
 }
 
 .contact .info-item p {
   font-size: 0.9375rem;
-  color: #666;
+  color: var(--default-color);
   margin: 0;
 }
 
-/* Google Map Styling */
-.contact .map-container {
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  height: 100%;
-}
-
+/* Map Styling (excluded from dark theme) */
 .contact iframe {
   width: 100%;
   height: 100%;
   border: 0;
   display: block;
   border-radius: inherit;
+  /* No dark filter applied */
+}
+
+/* Responsive */
+@media (max-width: 575.98px) {
+  .contact .info-wrap {
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+}
+
+/* Section Title Text */
+.contact .section-title h2,
+.contact .section-title p {
+  color: var(--contrast-color);
 }
 
 /*--------------------------------------------------------------
