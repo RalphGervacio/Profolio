@@ -882,6 +882,17 @@ section,
   vertical-align: middle;
 }
 
+.skill-card::before {
+  /* content: ""; */
+  display: block;
+  width: 150px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto 1rem auto;
+}
+
 /* Background images per skill (on ::before pseudo-element) */
 [data-skill="html"] .skill-card::before {
   background-image: url('../img/skills/html5.svg');
